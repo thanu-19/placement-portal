@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import "./AdminDashboard.css";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const AdminDashboard = () => {
     const [applicants, setApplicants] = useState([]);
@@ -15,7 +16,7 @@ const AdminDashboard = () => {
 
     const fetchApplicants = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/admin/applicants");
+            const response = await axios.get(`${backendURL}/api/admin/applicants`);
             setApplicants(response.data);
         } catch (err) {
             console.error("Error fetching applicants:", err);
@@ -24,7 +25,7 @@ const AdminDashboard = () => {
 
     const sendEmail = async (email, subject, message) => {
         try {
-            await axios.post("http://localhost:5000/api/send-email", { email, subject, message });
+            await axios.post(`${backendURL}/api/send-email`, { email, subject, message });
         } catch (error) {
             console.error("Error sending email:", error);
         }
@@ -33,12 +34,12 @@ const AdminDashboard = () => {
 
     const updateStatus = async (applicationId, status, applicant) => {
         try {
-            await axios.post("http://localhost:5000/api/admin/update-status", { applicationId, status: status.toUpperCase() });
+            await axios.post(`${backendURL}/api/admin/update-status`, { applicationId, status: status.toUpperCase() });
     
             // Send Email based on status
             if (status === "accepted") {
                 // Send detailed interview email with date/time
-                await axios.post("http://localhost:5000/api/send-interview-call", {
+                await axios.post(`${backendURL}/api/send-interview-call`, {
                     name: applicant.name,
                     email: applicant.email,
                     jobTitle: applicant.jobTitle,
@@ -47,7 +48,7 @@ const AdminDashboard = () => {
                     time: "10:00 AM"
                 });
             } else {
-                await axios.post("http://localhost:5000/api/send-email", {
+                await axios.post(`${backendURL}/api/send-email`, {
                     email: applicant.email,
                     subject: "Application Declined",
                     message: `Dear ${applicant.name},\n\nWe regret to inform you that your application for ${applicant.jobTitle} at ${applicant.companyName} has been declined. Better luck next time!\n\nBest Regards,\nPlacement Team`
@@ -92,7 +93,7 @@ const AdminDashboard = () => {
                                 <td>
                                     <a 
                                         className="view-link" 
-                                        href={applicant.resume.startsWith("http") ? applicant.resume : `http://localhost:5000${applicant.resume}`} 
+                                        href={applicant.resume.startsWith("http") ? applicant.resume : `${backendURL}${applicant.resume}`} 
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                     >

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MainPage.css";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const MainPage = () => {
     const [userData, setUserData] = useState(null);
@@ -18,7 +19,7 @@ const MainPage = () => {
 
         console.log("Fetching data for studentId:", studentId);
 
-        fetch(`http://localhost:5000/api/user/${studentId}`)
+        fetch(`${backendURL}/api/user/${studentId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("User data:", data);
@@ -41,7 +42,7 @@ const MainPage = () => {
     const toggleEdit = () => {
         if (isEditing) {
             // Save updated data to the backend (optional)
-            fetch(`http://localhost:5000/api/user/update/${userData.studentId}`, {
+            fetch(`${backendURL}/api/user/update/${userData.studentId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(userData),

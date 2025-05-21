@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./ApplyJobsPage.css";
 import Swal from 'sweetalert2';
-
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 const ApplyJobsPage = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [selectedJob, setSelectedJob] = useState(null);
@@ -71,7 +71,7 @@ const ApplyJobsPage = () => {
         formData.append("resume", selectedFile);
 
         try {
-            const response = await axios.post("http://localhost:5000/api/apply-job", formData, {
+            const response = await axios.post(`${backendURL}/api/apply-job`, formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 

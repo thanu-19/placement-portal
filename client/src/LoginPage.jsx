@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const LoginPage = () => {
   const [idNumber, setIdNumber] = useState("");
@@ -24,14 +25,14 @@ const LoginPage = () => {
 
         if (idNumber === "adminuser@gmail.com") {
             // 🔹 Admin Login
-            response = await fetch("http://localhost:5000/api/admin/login", {
+            response = await fetch(`${backendURL}/api/admin/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: idNumber, password }),
             });
         } else {
             // 🔹 Student Login
-            response = await fetch("http://localhost:5000/api/auth/login", {
+            response = await fetch(`${backendURL}/api/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ studentId: idNumber, password }),

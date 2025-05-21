@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./AppliedPage.css";
-
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 const AppliedPage = () => {
     const [appliedJobs, setAppliedJobs] = useState([]);
     const [selectedJob, setSelectedJob] = useState(null);
@@ -16,7 +16,7 @@ const AppliedPage = () => {
 
         const fetchAppliedJobs = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/applied-jobs/${studentId}`);
+                const response = await axios.get(`${backendURL}/api/applied-jobs/${studentId}`);
                 setAppliedJobs(response.data);
             } catch (error) {
                 console.error("Error fetching applied jobs:", error);
@@ -172,7 +172,7 @@ const AppliedPage = () => {
                                     <h2>{job.jobTitle}</h2>
                                     <p><strong>Company:</strong> {job.companyName}</p>
                                     <div className="button-group4">
-                                        <a href={`http://localhost:5000${job.resume}`} target="_blank" rel="noopener noreferrer">
+                                        <a href={`${backendURL}${job.resume}`} target="_blank" rel="noopener noreferrer">
                                             <button>View Resume</button>
                                         </a>
                                         <button onClick={() => handleViewDetails(job)}>View Details</button>
