@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./MainPage.css";
 const backendURL = import.meta.env.VITE_BACKEND_URL;
@@ -61,10 +62,14 @@ const MainPage = () => {
             <aside className="sidebar1">
                 <h1>Placement Portal</h1>
                 <nav>
-                    <a href="#" className="active">Home</a>
+                    {/* <a href="#" className="active">Home</a>
                     <a href="/applyjobs">Jobs</a>
                     <a href="/applied-jobs">Applied Jobs</a>
-                    <a href="/statistics">My Statistics</a>
+                    <a href="/statistics">My Statistics</a> */}
+                     <Link to="/main" className="active">Home</Link>
+        <Link to="/applyjobs">Jobs</Link>
+        <Link to="/applied-jobs">Applied Jobs</Link>
+        <Link to="/statistics">My Statistics</Link>
                     <a href="/" onClick={() => localStorage.removeItem("studentId")}>Log Out</a>
                 </nav>
             </aside>
