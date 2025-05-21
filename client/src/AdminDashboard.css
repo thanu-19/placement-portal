@@ -1,0 +1,73 @@
+.table-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    overflow-x: auto;
+    overflow-y: auto; /* ✅ Enables vertical scrolling */
+    max-height: 80vh; /* ✅ Limits height to fit screen and allow scrolling */
+}
+
+/* Ensuring body and html allow scrolling */
+html, body {
+    height: 100%;
+    overflow-y: auto; /* ✅ Allows scrolling on the page */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: orange;
+    color: black;
+    font-size: 16px;
+}
+
+td {
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e6e6fa;
+    transition: 0.3s;
+}
+
+.view-link {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        max-height: 70vh; /* ✅ Ensures visibility on smaller screens */
+    }
+}

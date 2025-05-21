@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+
+}
+.container4 {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.sidebar4 {
+    width: 22%;
+    background: #333;
+    color: white;
+    padding: 20px;
+    height: 100vh; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    overflow-y: auto; 
+}
+.sidebar4 h1 {
+    text-align: center;
+    color: white;
+}
+.sidebar4 nav {
+    display: flex;
+    flex-direction: column;
+}
+.sidebar4 a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+    border-radius: 5px;
+}
+.sidebar4 a.active4, .sidebar4 a:hover {
+
+    color: orange;
+    font-weight: bold;
+}
+.stats-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: purple;
+    margin-bottom: 20px;
+}
+.sgpa-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased spacing */
+    align-items: center;
+    margin-bottom: 20px;
+}
+.sgpa-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    font-size: 18px;
+}
+.sgpa-field label {
+    font-weight: bold;
+    margin-right: 15px; /* Added space between label and input */
+}
+.sgpa-field input {
+    width: 80px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.generate-btn {
+    background-color: #ff8800;
+    color: white;
+    padding: 5px;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+}
+.generate-btn:hover {
+    background-color: #cc6f00;
+}
+
+
+
+
+
+.statistics-container {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    overflow-y: visible;
+    max-height: 100vh;
+}
+
+.graph-container {
+    margin-top: 30px;
+    padding: 30px;
+    width: 500px; 
+    height: 500px; 
+    max-width: 800px; 
+    margin: auto;
+} 

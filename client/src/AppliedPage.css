@@ -1,0 +1,256 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-y: auto; 
+}
+
+.container4 {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.sidebar4 {
+    width: 22%;
+    background: #333;
+    color: white;
+    padding: 20px;
+    height: 100vh; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    overflow-y: auto; 
+}
+
+.sidebar4 h1 {
+    text-align: center;
+    color: white;
+}
+
+.sidebar4 nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar4 a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar4 a.active4, .sidebar4 a:hover {
+
+    color: orange;
+    font-weight: bold;
+}
+
+.main-content4 {
+    flex: 1;
+    margin-left: 40px;  /* Add space between sidebar and content */
+    padding: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    justify-content: flex-start;
+}
+
+.main-content4 h1{
+    color: #333;
+}
+
+.applied-jobs-container4 {
+    width: 700px; /* Wider container */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 20px; /* Move container near sidebar */
+}
+
+.applied-job-card4 {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 650px;
+}
+
+.job-details4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.job-details4 h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.job-details4 p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+.company-logo4 {
+    width: 80px; /* Adjust width */
+    height: 80px; /* Adjust height */
+    object-fit: contain; /* Ensure image fits inside */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+  
+  .company-logo4:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    filter: brightness(1.2); /* Increase brightness on hover */
+  }
+
+  
+.button-group4 {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-group4 button {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    min-width: 140px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-group4 button:hover {
+    background: orange;
+    padding: 9px 11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popup Box */
+
+
+.popup-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-height: 80vh;  /* Limits height to 80% of viewport */
+    overflow-y: auto;  /* Enables vertical scrolling */
+}
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* HR Image */
+.popup-company-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+/* Popup Header (Image & Text Side by Side) */
+.popup-header {
+    display: flex;
+    align-items: center;  /* Align items vertically */
+    gap: 20px;  /* Space between image and text */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Increase HR Image Size */
+.popup-company-logo {
+    width: 180px;  /* Increased width */
+    height: 180px; /* Increased height */
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Right Side (HCL Name + HR Details) */
+.popup-right {
+    flex: 1;  /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Job Description Section */
+.job-description {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.job-description p {
+    margin: 5px 0;
+    word-wrap: break-word;
+}

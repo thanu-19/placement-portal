@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+ /* General Styles */
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f4f4f4;
+     overflow-y: auto; 
+ }
+ 
+ .container2 {
+     display: flex;
+     width: 100%;
+     min-height: 100vh;
+ }
+ 
+ 
+ .sidebar2 {
+     width: 22%;
+     background: #333;
+     color: white;
+     padding: 20px;
+     height: 100vh; 
+     position: fixed; 
+     left: 0;
+     top: 0;
+     overflow-y: auto; 
+ }
+ 
+ .sidebar2 h1 {
+     text-align: center;
+     color: white;
+ }
+ 
+ .sidebar2 nav {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .sidebar2 a {
+     text-decoration: none;
+     color: white;
+     padding: 10px;
+     margin: 5px 0;
+     display: block;
+     border-radius: 5px;
+ }
+ 
+ .sidebar2 a.active, .sidebar2 a:hover {
+     /* background: #1abc9c; */
+     color: orange;
+     font-weight: bold;
+ }
+ 
+ .main-content2 {
+     flex: 1;
+     padding: 20px;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     justify-content: center;
+     margin-left: 24%; 
+     padding-top: 20px;
+     max-height: 100vh;
+     overflow-y: auto; 
+ }
+ 
+ .main-content2 h1 {
+     width: 100%;
+     text-align: center;
+     margin-bottom: 20px;
+     color: #333;
+ }
+ 
+ .job-card2 {
+     background: white;
+     border-radius: 10px;
+     padding: 20px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     width: 280px;
+ }
+ 
+ .job-card2 img {
+     width: 100%;
+     height: 150px;
+     object-fit: cover;
+     border-radius: 10px;
+ }
+ 
+ .job-card2 h2 {
+     font-size: 1.2rem;
+     margin: 10px 0;
+     color: #333;
+ }
+ 
+ .apply-btn2 {
+     margin-top: 8px;
+     background: orange;
+     color: white;
+     padding: 10px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ 
+ .apply-btn2:hover {
+     background: orange;
+     padding: 11px;
+ }
+ 
+ .popup-overlay2 {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1000;
+ }
+ 
+ .popup-box2 {
+     background: white;
+     padding: 25px;
+     border-radius: 12px;
+     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+     text-align: left;
+     width: 450px; 
+     max-height: 90vh;
+     overflow-y: auto;
+     position: relative;
+ }
+ 
+ .popup-box2 h2{
+     color: black;
+ }
+ 
+ .close-btn2 {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     background: white;
+     border: none;
+     font-size: 20px;
+     font-weight: bold;
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     cursor: pointer;
+     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+     color: orange;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .close-btn2:hover {
+     background: red;
+     color: white;
+ }
+ 
+ 
+ form {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ label {
+     font-weight: bold;
+     margin-top: 10px;
+ }
+ 
+ input[type="text"],
+ input[type="email"],
+ input[type="tel"],
+ input[type="file"] {
+     width: 100%;
+     padding: 8px;
+     margin-top: 5px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+ }
+ 
+ .branch-options2 {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+     margin-top: 5px;
+ }
+ 
+ .submit-btn2 {
+     margin-top: 15px;
+     background: orange;
+     color: white;
+     border: none;
+     padding: 10px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ 
+ .submit-btn2:hover {
+     background: orange;
+ }
+ 

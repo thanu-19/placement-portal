@@ -1,0 +1,37 @@
+# === LOG FILES ===
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# === NODE MODULES ===
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# === DIST / BUILD FOLDERS ===
+dist/
+dist-ssr/
+
+# === ENVIRONMENT VARIABLES ===
+.env
+.env.local
+client/.env
+server/.env
+
+# === SYSTEM / IDE FILES ===
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# === BACKUP FILES ===
+*.local
